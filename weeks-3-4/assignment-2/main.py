@@ -43,7 +43,7 @@ def main():
             results_time,
             results_memory,
             title_suffix=f"({dtype} Data)",
-            output_file=f"img/sorting_performance_{dtype.lower()}.png",  # save in img directory
+            output_file=f"img/sorting_performance_{dtype.lower()}.png",
         )
 
 

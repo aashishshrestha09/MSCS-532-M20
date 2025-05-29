@@ -11,7 +11,7 @@ def measure_performance(func, data):
     """
     tracemalloc.start()
     start_time = time.perf_counter()
-    func(data.copy())  # Use copy to avoid in-place changes affecting subsequent runs
+    func(data.copy())
     end_time = time.perf_counter()
     current, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()

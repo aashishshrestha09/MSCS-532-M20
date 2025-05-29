@@ -18,7 +18,7 @@ def plot_performance(
 
     plt.figure(figsize=(12, 5))
 
-    # 📈 Execution Time Plot
+    # Execution Time Plot
     plt.subplot(1, 2, 1)
     plt.plot(dataset_sizes, results_time["Merge Sort"], marker="o", label="Merge Sort")
     plt.plot(dataset_sizes, results_time["Quick Sort"], marker="o", label="Quick Sort")
@@ -28,7 +28,7 @@ def plot_performance(
     plt.legend()
     plt.grid(True)
 
-    # 📊 Memory Usage Plot
+    # Memory Usage Plot
     plt.subplot(1, 2, 2)
     plt.plot(
         dataset_sizes, results_memory["Merge Sort"], marker="o", label="Merge Sort"

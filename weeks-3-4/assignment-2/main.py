@@ -1,5 +1,27 @@
+import os
+import csv
 from sorting_algorithms import merge_sort_algorithm, quick_sort_algorithm
 from utils import dataset_utils, metrics_utils, plot_utils
+
+
+def save_results_to_csv(
+    directory, filename, dataset_type, dataset_sizes, times, memories
+):
+    # Create directory if it doesn't exist
+    os.makedirs(directory, exist_ok=True)
+
+    filepath = os.path.join(directory, filename)
+    with open(filepath, mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(
+            ["Dataset Type", "Size", "Algorithm", "Time (ms)", "Memory (KB)"]
+        )
+        for size in dataset_sizes:
+            for algo in ["Merge Sort", "Quick Sort"]:
+                time = times[algo][dataset_sizes.index(size)]
+                mem = memories[algo][dataset_sizes.index(size)]
+                writer.writerow([dataset_type, size, algo, f"{time:.2f}", f"{mem:.2f}"])
+    print(f"Saved results to {filepath}")
 
 
 def main():
@@ -38,6 +60,14 @@ def main():
             results_time["Quick Sort"].append(time_ms)
             results_memory["Quick Sort"].append(memory_kb)
 
+        # Save results for this dataset type to CSV inside the "outputs" folder
+        csv_filename = f"results_{dtype.lower()}.csv"
+        save_results_to_csv(
+            "outputs", csv_filename, dtype, dataset_sizes, results_time, results_memory
+        )
+        print(f"\nResults saved to outputs/{csv_filename}")
+
+        # Plot the performance graphs
         plot_utils.plot_performance(
             dataset_sizes,
             results_time,

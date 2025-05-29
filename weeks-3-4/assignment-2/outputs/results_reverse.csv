@@ -1,0 +1,9 @@
+Dataset Type,Size,Algorithm,Time (ms),Memory (KB)
+Reverse,500,Merge Sort,1.89,13.70
+Reverse,500,Quick Sort,1.73,16.27
+Reverse,1000,Merge Sort,4.29,27.41
+Reverse,1000,Quick Sort,3.32,32.24
+Reverse,2000,Merge Sort,10.13,54.75
+Reverse,2000,Quick Sort,5.58,65.09
+Reverse,5000,Merge Sort,28.28,136.78
+Reverse,5000,Quick Sort,12.93,162.00

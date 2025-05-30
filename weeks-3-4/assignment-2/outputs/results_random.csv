@@ -1,0 +1,9 @@
+Dataset Type,Size,Algorithm,Time (ms),Memory (KB)
+Random,500,Merge Sort,3.07,12.19
+Random,500,Quick Sort,2.42,17.87
+Random,1000,Merge Sort,3.69,24.66
+Random,1000,Quick Sort,3.70,47.62
+Random,2000,Merge Sort,17.01,48.91
+Random,2000,Quick Sort,5.45,104.12
+Random,5000,Merge Sort,45.35,120.98
+Random,5000,Quick Sort,6.94,226.27
